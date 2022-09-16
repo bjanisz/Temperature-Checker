@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="app-name">
+        <a class="app-name">TEMPERATURE CHECKER</a>
+      </div>
+      <div class="temperature-search">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="What is the temperature in?"
+        /><br />
+        <button onclick="citySearch()" id="searchButton">Search</button>
+
+        <h2 id="cityPlaceholder">City placeholder</h2>
+        <h3 id="temperaturePlaceholder">Teperature placeholder</h3>
+        <h4 id="conditionPlaceholder"></h4>
+        <img class="image" src="" id="myImg" />
+      </div>
+    </div>
+
+    <script src="client.js"></script>
+  </body>
+</html>
