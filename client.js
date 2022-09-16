@@ -32,8 +32,14 @@ function citySearch() {
 
   fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`, options)
     .then((response) => response.json())
-    .then(collectedData);
-
+    .then(collectedData)
+    .catch((error) => {
+      cityPlaceholder.innerHTML = "You did not enter a correct city!";
+      temperaturePlaceholder.style.visibility = "hidden";
+      conditionPlaceholder.style.visibility = "hidden";
+      condtitionImage.style.visibility = "hidden";
+    })
+    
   if (city !== "") {
     cityPlaceholder.innerHTML = `The temperature in ${city} is`;
     conditionPlaceholder.innerHTML = "Today's weather condition:";
@@ -49,8 +55,7 @@ function citySearch() {
 }
 
 const collectedData = (data) => {
-  console.log(data);
-
+  
   const myTemperature = data.current.temp_c;
   temperaturePlaceholder.innerHTML = `${myTemperature} &#8451`;
   const condition = data.current.condition.icon;
